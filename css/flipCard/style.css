@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    width: 200px;
+    height: 300px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card figure {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0; /* 제자리에서 회전하기 위해 */
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .front {
+    background-color: rgb(23, 23, 206);
+    color: white;
+}
+
+.card .front p {
+    padding: 0 10px;
+}
+
+.card .back {
+    background-color: rgb(143, 45, 235);
+    color: white;
+    transform: rotateY(180deg);
+}
