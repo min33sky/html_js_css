@@ -1,0 +1,24 @@
+.intro-title {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.intro-content {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 숨겨진 텍스느가 아래에서 위로 나타난다 */
+.intro-text {
+    width: 30%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s all ease-in-out;
+}
+
+.intro-appear {
+    opacity: 1;
+    transform: translateY(0px);
+}
