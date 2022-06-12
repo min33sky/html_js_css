@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1em;
+  background-color: lavender;
+  color: #4a5568;
+  height: 100vh;
+}
+
+.testimonials {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+}
+
+.testimonials .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 30px;
+  background-color: rgba(95, 106, 117, 0.3);
+  border-radius: 15px;
+  z-index: 1;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.testimonials .btn:hover {
+  background-color: rgba(95, 106, 117, 0.5);
+  cursor: pointer;
+}
+
+.testimonials .btn.next {
+  right: 15px;
+}
+
+.testimonials .btn.prev {
+  left: 15px;
+}
+
+.scroller {
+  display: flex;
+  overflow-x: scroll;
+
+  /* x축에 대해서 스크롤 스냅핑 적용 */
+  scroll-snap-type: x mandatory;
+
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 스크롤바 숨기기 */
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  min-width: 100%; /** 각 item당 scroller 사이즈로 설정 */
+  min-height: 200px;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 0 50px;
+
+  /* 스크롤 스냅 위치를 설정한다 */
+  scroll-snap-align: center;
+}
+
+.item img {
+  margin: 15px auto -60px;
+  width: 120px;
+  height: 120px;
+  border: solid 4px #ffffff;
+  border-radius: 60px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.card {
+  background-color: rgb(237, 242, 247);
+  padding: 80px 40px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.card p {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.card span {
+  display: block;
+  margin-top: 20px;
+  color: teal;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px) {
+  .item {
+    padding: 0 30px;
+  }
+  .card {
+    padding: 80px 30px 30px;
+  }
+}
