@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lavender;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b1fffa;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1100px;
+  padding: 40px;
+
+  /* 임시 */
+  background-color: rebeccapurple;
+}
+
+article.post {
+  position: relative;
+  width: 515px;
+  height: 450px;
+  overflow: hidden; /* Zoom 효과를 위해서 설정 */
+}
+
+.post-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/267569/pexels-photo-267569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: center;
+  background-size: cover;
+  transition: all 0.7s;
+}
+
+.post-bg::after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.7s;
+}
+
+/*? 부모를 hover하면 자식을 변형시킴 */
+.post:hover .post-bg,
+.post:focus .post-bg {
+  transform: scale(1.1);
+}
+
+.post:hover .post-bg::after,
+.post:focus .post-bg::after {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.post-title,
+.post-excerpt,
+.post-read-more,
+.post-date-time {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+  transition: all 0.7s;
+}
+
+.post-title {
+  top: 35%;
+  max-height: 120px; /* This is to make sure that longer titles are truncated */
+}
+
+.post-title a {
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+.post-excerpt {
+  top: 46%;
+  max-height: 82px;
+  font-size: 1.1em;
+}
+
+.post-excerpt::after {
+  content: ...;
+}
+
+.post-read-more {
+  top: 67%;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.post-date-time {
+  top: 90%;
+  font-size: 0.8em;
+}
+
+.post-icon-text {
+  padding: 0 10px;
+}
+
+i.fa {
+  padding: 0 5px;
+}
+
+.post-excerpt,
+.post-read-more,
+.post-date-time {
+  opacity: 0;
+}
+
+.post:hover .post-title {
+  top: 15%;
+}
+
+.post:hover .post-excerpt,
+.post:hover .post-read-more {
+  opacity: 1;
+}
+
+.post:hover .post-date-time {
+  top: 80%;
+  opacity: 1;
+}
