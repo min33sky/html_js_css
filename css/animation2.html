@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 36px;
+    }
+
+    button {
+      all: unset;
+      margin-bottom: 2em;
+      padding: 0 2em;
+      height: 64px;
+      line-height: 64px;
+      font-size: 1.2em;
+      color: white;
+      background-color: tomato;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #loading {
+      position: relative;
+      width: 600px;
+      height: 40px;
+      background-color: lightblue;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    #loading>div {
+      display: flex;
+      width: 200%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: flow-right 4s linear infinite;
+      transform: skew(-24deg);
+    }
+
+    #loading>div>div {
+      flex-grow: 1;
+    }
+
+    #loading>div>div:nth-child(odd) {
+      background-color: dodgerblue;
+    }
+
+    button._1 {
+      transition: all .5s ease-out;
+    }
+
+    button._1:hover {
+      background-color: darkorchid;
+      border-radius: 32px;
+    }
+
+    button._2 {
+      /*  */
+    }
+
+    button._2:hover {
+      animation: button_hover .2s;
+    }
+
+    @keyframes button_hover {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.04);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes flow-right {
+      from {
+        left: -600px;
+      }
+
+      to {
+        left: 0;
+      }
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="container">
+    <button class="_1">
+      마우스 커서를 올려보세요!
+    </button>
+
+    <br>
+
+    <button class="_2">
+      마우스 커서를 올려보세요!
+    </button>
+
+    <br>
+
+    <div id="loading">
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+</body>
+
+</html>
