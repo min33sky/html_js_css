@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lavender;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* 타임라인 중심선 */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.container-left {
+  left: 0;
+  padding-right: 70px;
+}
+
+.container-right {
+  left: 50%;
+  padding-left: 70px;
+}
+
+.content {
+  position: relative;
+  padding: 30px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+}
+
+/*? 화살표 마크 만들기 */
+.container .content::before {
+  content: ' ';
+  position: absolute;
+  height: 0;
+  top: 20px;
+  width: 0;
+  z-index: 1;
+  border: medium solid white;
+}
+
+.container-left .content::before {
+  right: -10px;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.container-right .content::before {
+  left: -10px;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}

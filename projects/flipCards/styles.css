@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: lavender;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #444444;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.post-wrap {
+  width: 320px;
+  height: 420px;
+
+  min-width: 300px;
+  max-width: 380px;
+
+  flex: 1;
+
+  /*? 3D 공간 설정을 위한 속성 (부모에 해당 속성을 설정해야 한다.) */
+  perspective: 1000px;
+}
+
+.post-wrap:hover .post {
+  transform: rotateY(180deg);
+}
+
+.post {
+  position: relative; /** Required to absolutely position the child faces */
+  width: 100%;
+  height: 100%;
+
+  /** 3D Effect */
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.post-front,
+.post-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+
+  /*? 뒤집었을 때 앞면이 보이는걸 막는다.  */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.post-back {
+  transform: rotateY(180deg);
+}
+
+/* Front Face */
+.post-img {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+.post-info {
+  padding: 20px 30px 30px;
+}
+
+.post-info span {
+  font-size: 0.8rem;
+  color: #808080;
+}
+
+.post-info h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 5px;
+}
+
+/* Back Face */
+.post-back {
+  background-color: #ffffff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.post-back h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 5px;
+}
+
+.post-back p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.post-back a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #5678ba;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 5px;
+}
