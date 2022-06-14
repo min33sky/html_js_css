@@ -29,21 +29,25 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .container {
   position: relative;
   width: 50%;
+  min-height: 120px;
 }
 
 .container-left {
   left: 0;
   padding-right: 70px;
+  text-align: right;
 }
 
 .container-right {
   left: 50%;
   padding-left: 70px;
+  text-align: left;
 }
 
 .content {
@@ -54,13 +58,13 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
 }
 
-/*? 화살표 마크 만들기 */
+/*? 삼각형 마크 만들기 */
 .container .content::before {
   content: ' ';
   position: absolute;
   height: 0;
-  top: 20px;
   width: 0;
+  top: 35px; /* 삼각형 마크 위치 */
   z-index: 1;
   border: medium solid white;
 }
@@ -75,4 +79,98 @@ body {
   left: -10px;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
+}
+
+.image {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  border: solid 5px #ffffff;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.container-left .image {
+  right: 0;
+  margin-right: -45px;
+}
+
+.container-right .image {
+  left: 0;
+  margin-left: -45px;
+}
+
+.container span {
+  color: #2c7a7b;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.content h2 {
+  font-size: 1.8em;
+  padding-top: 5px;
+}
+
+.content p {
+  line-height: 1.6;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  /** 타임라인 선을 왼쪽으로 이동 */
+  .timeline::after {
+    left: 65px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 0px;
+    margin-top: 30px;
+  }
+
+  .container:first-of-type {
+    margin-top: 0px;
+  }
+
+  .container-right {
+    left: 0%;
+  }
+
+  .container-left {
+    text-align: left;
+  }
+
+  .container .image {
+    left: -10px;
+    top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .container-left .content::before {
+    left: -10px;
+    right: auto;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-left: 0px;
+    padding-top: 105px;
+    z-index: 3;
+  }
+
+  .container .content::before {
+    left: 25px;
+    top: -10px;
+    border: medium solid white;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent white transparent;
+  }
 }
