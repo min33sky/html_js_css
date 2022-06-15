@@ -1,0 +1,70 @@
+.intro {
+  position: relative;
+  background-image: url('../images/intro-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.intro__type {
+  position: relative;
+  font-family: var(--font-code);
+  font-size: 2.8em;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 100px;
+
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.67);
+}
+
+.intro__type .underscore {
+  animation: blink infinite 0.3s alternate;
+}
+
+[class^='intro__tilt'] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: var(--color-main);
+  clip-path: polygon(100% 90%, 100% 100%, 0 100%, 0 0);
+}
+
+.intro__tilt--flip {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 90%);
+  opacity: 0.5;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (min-width: 769px) {
+  .intro {
+    height: 500px;
+  }
+
+  .intro__type {
+    max-width: 100%;
+  }
+}
