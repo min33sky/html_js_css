@@ -34,13 +34,16 @@
 
 /* ===== 리셋 구간 ===== */
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Noto Sans KR', sans-serif;
-
-  scroll-behavior: smooth;
 
   /* 개발용 설정 */
   min-height: 350vh;
