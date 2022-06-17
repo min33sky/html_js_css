@@ -12,18 +12,19 @@ img {
 }
 
 main {
+  /* 가운데 정렬 */
   display: grid;
   place-items: center;
   min-height: 100vh;
 }
 
 .container {
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  --position: 50%;
+  --position: 50%; /*? 반으로 나누는 경계선의 위치 */
 }
 
 .image-container {
@@ -44,4 +45,48 @@ main {
   inset: 0;
   width: var(--position);
   filter: grayscale(100%);
+}
+
+/*? 게이지의 범위를 이미지 전체 영역으로 지정  */
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  opacity: 0;
+  /* For Firefox */
+  width: 100%;
+  height: 100%;
+}
+
+/*? Tab키를 눌렀을 시 버튼에 테두리 효과주기  */
+.slider:focus-visible ~ .slider-button {
+  outline: 5px solid blueviolet;
+  outline-offset: 3px;
+}
+
+/*? 경계선 */
+.slider-line {
+  position: absolute;
+  inset: 0;
+  width: 0.2rem;
+  height: 100%;
+  left: var(--position);
+  background-color: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.slider-button {
+  position: absolute;
+  background-color: #fff;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 100vw;
+  display: grid;
+  place-items: center;
+  top: 50%;
+  left: var(--position);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 1px 1px 1px hsl(0, 50%, 2%, 0.5);
 }
