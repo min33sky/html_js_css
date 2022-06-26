@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f0f5ff;
+
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  background-color: #ffffff;
+  padding: 3.5em;
+  text-align: center;
+  font-size: 16px;
+}
+
+a {
+  position: relative;
+  color: orange;
+  font-size: inherit;
+}
+
+/* 툴팁 출력 영역 */
+a::after {
+  content: attr(data-tip);
+  position: absolute;
+  width: 12em;
+  background-color: #202842;
+  color: #ffffff;
+  padding: 0.6em 0;
+  margin: auto;
+  left: -4.5em;
+  right: 0;
+  bottom: 1.5em;
+  text-align: center;
+  border-radius: 0.2em;
+}
+
+/* 삼각형 마킹 */
+a::before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  border-top: 0.5em solid #202842;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 1.1em;
+}
+
+a::before,
+a::after {
+  display: none;
+}
+
+a:hover::after,
+a:hover::before {
+  display: block;
+}

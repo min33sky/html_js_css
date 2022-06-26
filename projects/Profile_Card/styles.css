@@ -1,0 +1,70 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: darkslateblue;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 35px 65px rgba(6, 34, 70, 0.6);
+}
+
+.card img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+h3 {
+  position: absolute;
+  background-color: #5ca3ff;
+  width: 60%;
+  bottom: 80px;
+  right: -65%;
+  padding: 10px 0;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: 500;
+  transform: skew(-5deg);
+  transition: all 0.3s;
+}
+
+h5 {
+  position: absolute;
+  background-color: #ffffff;
+  width: 80%;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  right: -85%;
+  bottom: 37px;
+  transform: skew(-5deg);
+  transition: all 0.3s;
+}
+
+.card:hover h3,
+.card:hover h5 {
+  right: -2px;
+}
+
+.card:hover img {
+  transform: scale(1.15);
+  filter: contrast(120%);
+}
