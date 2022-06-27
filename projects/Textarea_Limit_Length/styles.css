@@ -1,0 +1,76 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5d54b3;
+  font-family: 'Poppins', sans-serif;
+
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 450px;
+  padding: 50px 30px;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+
+  font-size: 16px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  padding: 20px;
+  color: #202020;
+  border: 1.5px solid #b2b2b2;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+}
+
+textarea.warn {
+  border: 1.5px solid #ff2851;
+}
+
+.char-length {
+  text-align: right;
+  margin-top: 15px;
+  color: #737373;
+}
+
+.char-length.warn {
+  color: #ff2851;
+}
+
+button {
+  all: unset;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #5d54b3;
+  color: white;
+  margin-top: 15px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: rgba(93, 84, 179, 0.9);
+}
+
+button:disabled {
+  background-color: #737373;
+  cursor: not-allowed;
+}
