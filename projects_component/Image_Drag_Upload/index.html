@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Gooogle Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+  <title>Drag And Drop File Upload</title>
+</head>
+
+<body>
+  <label for="upload_image" class="drop-zone">
+    <span class="drop-zone__prompt">Drop file here or click to upload</span>
+    <span class="drop-zone__thumbnail hidden" data-label="Test.jpg"></span>
+    <input type="file" id="upload_image" accept="image/*" hidden>
+  </label>
+  <script src="./app.js"></script>
+</body>
+
+</html>
