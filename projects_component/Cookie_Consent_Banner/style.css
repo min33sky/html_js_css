@@ -1,0 +1,80 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5f8ff;
+}
+
+#cookie-popup {
+  background-color: #ffffff;
+  position: absolute;
+  font-size: 14px;
+  width: 70vw;
+  max-width: 42.85em;
+  box-shadow: 0 0 2em rgba(5, 0, 31, 0.15);
+  text-align: center;
+  line-height: 1.8em;
+  padding: 2em 1.4em;
+  border-radius: 6px;
+  transition: all 0.5s ease-in;
+}
+
+#cookie-popup img {
+  display: block;
+  width: 3.75em;
+  transform: translateZ(0);
+  position: relative;
+  margin: auto;
+}
+
+#cookie-popup p {
+  margin: 1.4em 0;
+}
+
+#cookie-popup button {
+  background-color: #6849fe;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 1em 1.4em;
+  margin: auto;
+  cursor: pointer;
+}
+
+#cookie-parser a {
+  color: #6849fe;
+}
+
+.hide {
+  visibility: hidden;
+  bottom: 0;
+  right: 2em;
+}
+
+.show {
+  visibility: visible;
+  bottom: 2em;
+  right: 2em;
+}
+
+@media screen and (max-width: 37.5em) {
+  #cookie-popup {
+    width: 100%;
+  }
+
+  .hide {
+    bottom: 2em;
+    right: 0;
+  }
+
+  .show {
+    bottom: 0;
+    right: 0;
+  }
+}

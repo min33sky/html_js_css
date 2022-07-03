@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --scroll-height: 0.5em;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+  background-color: #242942;
+}
+
+.scroller {
+  background-color: lavender;
+  width: 100vw;
+  padding: 30px 20px;
+  margin: 10px 0;
+  overflow-x: scroll;
+  /*? Hover시 스크롤바 */
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(
+      to top,
+      transparent var(--scroll-height),
+      black var(--scroll-height)
+    );
+  -webkit-mask-size: 100% 20000px;
+  -webkit-mask-position: left bottom;
+  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+
+.scroller:hover {
+  -webkit-mask-position: left top;
+}
+
+.scroller p {
+  min-width: 450vw;
+}
+
+/*  ::-webkit- is for chrome */
+::-webkit-scrollbar {
+  height: var(--scroll-height);
+  overflow-y: none;
+}
+
+::-webkit-scrollbar-track {
+  /* background-color: #242942; */
+  margin-block: 0.25em;
+  border-radius: 0.3em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00c6ff;
+  background: -webkit-linear-gradient(to right, #00c6ff, #0072ff);
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border-radius: 0.3em;
+}
