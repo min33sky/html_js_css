@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-image: radial-gradient(
+    circle 610px at 5.2% 51.6%,
+    rgba(5, 8, 114, 1) 0%,
+    rgba(7, 3, 53, 1) 97.5%
+  );
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 50px 70px;
+  border-radius: 6px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+label {
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: #1f194c;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+label:hover {
+  color: tomato;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+label:not(:first-child) {
+  margin-left: 20px;
+}
