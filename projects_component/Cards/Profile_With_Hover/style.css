@@ -1,0 +1,98 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #fabe58;
+}
+
+.card {
+  position: relative;
+  height: 450px;
+  width: 310px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  box-shadow: 0 0 25px 10px rgba(223, 144, 7, 0.6);
+}
+
+.info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.name {
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f79f08;
+  height: 10%;
+}
+
+.prof {
+  color: #555555;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 25px;
+  height: 10%;
+}
+
+.divider {
+  height: 1.5px;
+  width: 50px;
+  background-color: #949594;
+}
+
+.bio {
+  color: #949594;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  line-height: 28px;
+  height: 35%;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #f79f08;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 13px 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: #fabe58;
+}
+
+.photo {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./profile1.jpg');
+  background-size: 100% 100%;
+  border-radius: 8px;
+  transition: all 1s;
+}
+
+.card:hover .photo {
+  transform: scale(0.5, 0.35) translateY(-150%);
+  background-size: 100% 150%;
+  background-position: 0 -25px;
+  border-radius: 50%;
+}

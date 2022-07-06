@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --width: 300px;
+  --height: 300px;
+  --cube-transition-time: 2s;
+}
+
+body {
+  background-color: cornflowerblue;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.wrapper {
+}
+
+.container {
+  position: relative;
+  border: 1px solid #ffffff;
+  height: var(--height);
+  width: var(--width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 3D 효과 적용:  transform-style: preserve-3d;을 적용할 DOM 상단에 추가 */
+  perspective: 800px;
+  perspective-origin: 50%;
+}
+
+.image-cube {
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d; /* 자식 요소들에게 3D 효과 적용 */
+  position: relative;
+  transition: all var(--cube-transition-time);
+}
+
+.image-cube div {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+
+img {
+  width: 100%;
+  transform: translateZ(0);
+}
+
+.front {
+  transform: translateZ(150px);
+}
+
+.right {
+  transform: rotateY(-270deg) translateX(150px);
+  transform-origin: 100% 0;
+}
+
+.back {
+  transform: translateZ(-150px) rotateY(180deg);
+}
+
+.left {
+  transform: rotateY(270deg) translateX(-150px);
+  transform-origin: 0 50%;
+}
+
+.btns {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.btns button {
+  background-color: transparent;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  padding: 8px 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.btns button:hover {
+  color: tomato;
+  border-color: tomato;
+}
+
+.container:hover .btns button {
+  opacity: 1;
+}
