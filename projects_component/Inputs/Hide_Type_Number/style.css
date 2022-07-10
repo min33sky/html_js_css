@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: lightslategray;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 250px;
+  padding: 40px 40px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+}
+
+input[type='number'] {
+  width: 100%;
+  font-size: 2rem;
+  padding: 10px;
+  outline: none;
+  text-align: right;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
