@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to right, #ad5389, #3c1053);
+}
+
+.container {
+  background-color: #ffffff;
+  letter-spacing: 0.4px;
+  width: 450px;
+  padding: 50px 40px;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.lbl {
+  font-size: 16px;
+  color: #44475b;
+  font-weight: 400;
+}
+
+.val {
+  color: #44475b;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.input-box {
+  background-color: #cdccfd;
+  color: #6f6df4;
+  padding: 5px;
+}
+
+#bill {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100px;
+  text-align: right;
+  color: #6f6df4;
+}
+
+#bill::-webkit-inner-spin-button,
+#bill::-webkit-outer-spin-button {
+  display: none;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #cdccfd;
+}
+
+input[type='range'] {
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type='range']:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+section:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+section:last-child {
+  background-color: #cdccfd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+section:last-child .val,
+section:last-child .lbl {
+  color: #4c4af4;
+}
