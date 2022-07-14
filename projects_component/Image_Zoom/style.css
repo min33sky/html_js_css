@@ -24,7 +24,9 @@ img {
   max-width: 100%;
 }
 
+/** 확대 이미지가 보여지는 곳 */
 .overlay {
+  /*? background-position을 js로 설정해서 특정 부분을 확대한 효과를 준다. */
   background: url('./shoe-img.jpg');
   position: absolute;
   width: 25%;
@@ -36,6 +38,7 @@ img {
   background-repeat: no-repeat;
 }
 
+/* 마우스를 따라다니는 영역 (이부분이 확대된다)*/
 .mouse-overlay {
   cursor: zoom-in;
   position: absolute;
