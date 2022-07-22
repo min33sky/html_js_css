@@ -129,8 +129,9 @@ function init() {
 }
 
 mainBtn.addEventListener('click', () => {
+  console.log('ㅎㅎ');
   if (!inProgress) {
-    startTest; // 현재 진행중인지 ();
+    startTest(); // 현재 진행중인지 ();
   } else {
     displayResult();
   }
@@ -139,3 +140,5 @@ mainBtn.addEventListener('click', () => {
 window.onload = () => {
   userInput.disabled = true;
 };
+
+console.log('loaded');
