@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #eef5ff;
+  display: grid;
+  place-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  gap: 15px;
+}
+
+.container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  box-shadow: 0 0 25px rgba(17, 1, 68, 0.08);
+  border-radius: 8px;
+}
+
+input[type='checkbox'] {
+  position: relative;
+  appearance: none; /** 체크박스 기본 와꾸를 제거한다. */
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type='checkbox']::after {
+  content: '\f111';
+  position: absolute;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+  font-size: 18px;
+  color: #478bfb;
+  right: 10px;
+  top: -5px;
+}
+
+input[type='checkbox']:checked::after {
+  content: '\f058';
+  font-weight: 900;
+  color: #478bfb;
+}
+
+.container img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 70%;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-user-drag: none;
+}
+
+@media screen and (min-width: 950px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .container {
+    height: 300px;
+    width: 300px;
+  }
+
+  input[type='checkbox']::after {
+    font-size: 22px;
+  }
+}
