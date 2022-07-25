@@ -1,0 +1,137 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --theme-color: #ff1756;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #fafafa;
+}
+
+.container {
+}
+
+.card {
+  height: 420px;
+  width: 320px;
+  background: linear-gradient(
+    to bottom,
+    var(--theme-color) 100px,
+    #ffffff 110px
+  );
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(50, 50, 50, 0.1);
+  padding: 50px 0;
+}
+
+.card * {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+img {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 100vmin;
+  box-shadow: 0 0 0 6px #ffffff; /*? 흰색 테두리 효과*/
+  -webkit-user-drag: none;
+}
+
+.card h4 {
+  color: var(--theme-color);
+  font-size: 16px;
+  margin: 15px 0 5px 0;
+}
+
+.card h5 {
+  color: #454545;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.details h2 {
+  font-weight: 400;
+}
+
+.details span {
+  color: var(--theme-color);
+  user-select: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.buttons button {
+  width: 130px;
+  padding: 8px 0;
+  border-radius: 25px;
+  border: 3px solid var(--theme-color);
+  cursor: pointer;
+}
+
+.buttons button:first-child {
+  background-color: var(--theme-color);
+  color: #ffffff;
+}
+
+.buttons button:last-child {
+  background-color: transparent;
+  color: var(--theme-color);
+}
+
+.themes {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(50, 50, 50, 0.1);
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.themes .btn {
+  height: 25px;
+  width: 25px;
+  border-radius: 100vmin;
+  border: 3px solid #dddddd;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn1 {
+  background-color: #3498db;
+}
+.btn2 {
+  background-color: #ff1756;
+}
+.btn3 {
+  background-color: #1cb65d;
+}
+.btn4 {
+  background-color: #8e44ad;
+}
+.btn5 {
+  background-color: #f4b932;
+}
