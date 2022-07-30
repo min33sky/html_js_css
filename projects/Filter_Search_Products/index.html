@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="./script.js" defer></script>
+  <title>Filter Search Products</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <form aria-label="검색창" id="search-container">
+      <input type="search" name="" id="search-input" placeholder="Search product name here..">
+      <button type="submit">Search</button>
+    </form>
+
+    <nav aria-label="카테고리" class="buttons">
+      <button class="button-value">All</button>
+      <button class="button-value">Topwear</button>
+      <button class="button-value">Bottomwear</button>
+      <button class="button-value">Jacket</button>
+      <button class="button-value">Watch</button>
+    </nav>
+
+    <div aria-label="상품 리스트" id="products"></div>
+  </div>
+</body>
+
+</html>
