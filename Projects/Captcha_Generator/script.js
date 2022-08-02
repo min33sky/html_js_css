@@ -14,6 +14,27 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+/**
+ * 문자열 내의 문자 위치를 섞어주는 함수
+ * @param {string} text 문자열
+ */
+function randomPosition(text) {
+  let result = '';
+  let original = [...text];
+
+  while (original.length > 0) {
+    const targetIndex = Math.floor(Math.random() * original.length);
+    result += original[targetIndex];
+    original.splice(targetIndex, 1);
+  }
+
+  return result;
+}
+
+/**
+ * 캡챠에 사용할 문자열 생성
+ * @returns 문자열
+ */
 function textGenerator() {
   let generatedText = '';
 
@@ -27,27 +48,24 @@ function textGenerator() {
   return generatedText;
 }
 
+/**
+ * 캡차 영역에 그리는 함수
+ * @param {string} string 캡챠 문자열
+ */
 function drawStringOnCanvas(string) {
   //? The getContext() function returns the drawing context that all the drawing
   //? properties and functions needed to draw on canvas
   const ctx = canvas.getContext('2d');
-
-  //* clear canvas
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-  //* array of text color
-  const textColors = ['rgb(0,0,0', 'rgb(130,130,130'];
+  const textColors = ['rgb(0,0,0)', 'rgb(130,130,130)'];
 
-  //* space between letters
+  //* 자간 설정
   const letterSpace = 150 / string.length;
 
-  //* loop throught string
   for (let i = 0; i < string.length; i++) {
-    //Define initial space on X axis
-    const xInitialSpace = 25;
-    // Set font for canvas element
+    const xInitialSpace = 25; //? 초기 X 좌표 설정
     ctx.font = '20px Roboto Mono';
-    // set text color
     ctx.fillStyle = textColors[randomNumber(0, 1)];
     ctx.fillText(
       string[i], //? i번째 문자
@@ -58,30 +76,28 @@ function drawStringOnCanvas(string) {
   }
 }
 
-function triggerFunction() {
-  // clear Input
-  userInput.value = '';
-  text = textGenerator();
-  console.log('text: ', text);
-  //? Randomize the text so that everytime the position of numbers and small letters is random
-  //TODO 개선해야함 랜덤
-  text = [...text].sort(() => Math.random() - 0.5).join('');
-  drawStringOnCanvas(text);
-}
-
-// call triggerFunction for reload button
-reloadBUtton.addEventListener('click', triggerFunction);
-
-// call triggerFunction when page loads
-window.onload = () => triggerFunction();
-
-// When user clicks on submit
-submitButton.addEventListener('click', () => {
-  // check if user input === generated text
-  console.log(userInput.value, text, userInput.value === text);
+/**
+ * 결과 출력
+ */
+function checkInput() {
   if (userInput.value === text) {
     return alert('success');
   }
   alert('Incorrect');
-  triggerFunction();
+  trigger();
+}
+
+function trigger() {
+  userInput.value = '';
+  text = randomPosition(textGenerator());
+  drawStringOnCanvas(text);
+}
+
+reloadBUtton.addEventListener('click', trigger);
+submitButton.addEventListener('click', checkInput);
+userInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    checkInput();
+  }
 });
+window.onload = trigger;

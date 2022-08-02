@@ -13,8 +13,9 @@ body {
 
 .container {
   width: 90vmin;
+  max-width: 550px;
   background-color: #ffffff;
-  padding: 5em;
+  padding: 2em 1em 2em 1em;
   border-radius: 0.6em;
   box-shadow: 0 1em 2em rgba(0, 0, 0, 0.25);
 }
@@ -27,9 +28,10 @@ body {
 }
 
 canvas {
-  border: 1px solid #000000;
+  border: 1px solid ghostwhite;
   border-radius: 0.4em;
   height: 50px;
+  background: lavender;
   flex: 1;
 }
 
@@ -40,6 +42,12 @@ button#reload-button {
   border: none;
   border-radius: 0.4em;
   color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+button#reload-button:hover {
+  opacity: 0.9;
 }
 
 input[type='text'] {
@@ -47,8 +55,9 @@ input[type='text'] {
   font-size: 1.05em;
   width: 100%;
   padding: 1em 0.7em;
-  border: 1px solid #000000;
+  border: 1px solid darkgray;
   border-radius: 0.4em;
+  outline: none;
 }
 
 button#submit-button {
@@ -61,4 +70,10 @@ button#submit-button {
   margin-top: 1em;
   padding: 0.8em 0;
   border-radius: 0.4em;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+button#submit-button:hover {
+  opacity: 0.9;
 }
