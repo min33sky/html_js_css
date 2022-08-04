@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="./script.js" defer></script>
+  <title>Flash Card</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <button id="add-flashcard">Add Flashcard</button>
+    </header>
+
+    <div id="card-con">
+      <div class="card-list-container">
+        <!-- <div class="card">
+          <div class="question-div">질문</div>
+          <button class="show-hide-btn">버튼</button>
+          <div class="answer-div">답</div>
+          <div class="buttons-con">
+            <button class="edit">수정</button>
+            <button class="delete">삭제</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="question-div">질문</div>
+          <button class="show-hide-btn">버튼</button>
+          <div class="answer-div">답</div>
+          <div class="buttons-con">
+            <button class="edit">수정</button>
+            <button class="delete">삭제</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="question-div">질문</div>
+          <button class="show-hide-btn">버튼</button>
+          <div class="answer-div">답</div>
+          <div class="buttons-con">
+            <button class="edit">수정</button>
+            <button class="delete">삭제</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 -->
+  <div class="modal hide">
+    <div id="backdrop"></div>
+    <div class="question-container " id="add-question-card">
+      <h2>Add Flashcard</h2>
+
+      <!-- 에러 메세지 -->
+      <div class="wrapper">
+        <div class="error-con">
+          <div class="hide" id="error">Input fields cannot be empty!</div>
+        </div>
+        <i class="fa-solid fa-xmark" id="close-btn"></i>
+      </div>
+
+      <label for="question">Question:</label>
+      <textarea id="question" rows="2" placeholder="Type the question here..."></textarea>
+      <label for="answer">Anser:</label>
+      <textarea id="answer" rows="4" placeholder="Type the answer here..."></textarea>
+      <button id="save-btn">Save</button>
+    </div>
+  </div>
+</body>
+
+</html>
