@@ -1,0 +1,268 @@
+/* 특정 browser에서 한글 주석이 깨지는걸 막아준다. */
+@charset 'utf-8';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css');
+@import url(./reset.css);
+@import url(./util.css);
+
+:root {
+  --border-color: #bdbdbd;
+  --bg-color: #e5e5e5;
+  --link-nav: #828282;
+}
+
+body {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
+    'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    sans-serif;
+}
+
+/* 스킵네비게이션 */
+.nav-skip a {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 160px;
+  line-height: 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #333;
+  text-align: center;
+}
+
+.nav-skip a:active,
+.nav-skip a:focus {
+  top: 0;
+}
+
+/* 컨테이너 스타일 */
+.cont-movie {
+  width: 90vw;
+  max-width: 1006px;
+  margin-top: 86px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+}
+
+.cont-movie .title {
+  font-size: 24px;
+  text-align: center;
+  line-height: 28px;
+  padding: 38px 0;
+}
+
+/* Nav 스타일 */
+.cont-movie .nav-movie {
+  text-align: center;
+}
+
+.cont-movie .nav-movie::before {
+  content: '';
+  display: block;
+  width: 80%;
+  max-width: 650px;
+  height: 2px;
+  background-color: var(--border-color);
+  margin: 0 auto;
+}
+
+.cont-movie .nav-movie .list-movieNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  gap: 60px;
+}
+
+.link-nav {
+  color: var(--link-nav);
+}
+
+.link-nav.active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* 컨텐츠 스타일 */
+.list-movieInfo {
+  background-color: #fff;
+  border: 2px solid var(--border-color);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 24px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center center;
+  gap: 20px;
+}
+
+.list-movieInfo li {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  margin-top: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.list-movieInfo article {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 19px;
+}
+
+.list-movieInfo li .links {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.list-movieInfo li .links > a[class^='link'] {
+  width: 50%;
+  text-align: center;
+  height: 41px;
+  line-height: 41px;
+  background-color: #f2f2f2;
+  border-top: 1px solid var(--border-color);
+}
+
+.link-reserve::after {
+  content: '';
+  display: inline-block;
+  float: right;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+}
+
+.link-teaser::before {
+  content: '';
+  display: inline-block;
+  background: url('../assets/btn_play.png');
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 2px;
+  margin-top: -4px;
+}
+
+.link-movie {
+  display: block;
+  margin-bottom: 11px;
+}
+
+.link-movie img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.title.ellipsis {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+dl.list-info {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+dl.list-info div {
+  display: flex;
+  font-size: 13px;
+  gap: 4px;
+}
+
+dl.list-info div dt {
+  flex-shrink: 0;
+}
+
+dl.list-info div dd {
+  font-weight: 600;
+}
+
+dl.list-info .item-star dt::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 13px;
+  margin-left: 5px;
+  background-image: url('../assets/별점이미지.png');
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+dl.list-info div:nth-child(3) {
+  grid-column: 1 / 3;
+}
+
+dl.list-info div:nth-child(4) {
+  grid-column: 1 / 3;
+}
+
+/* 푸터 디자인 */
+.cont-company {
+  background-color: #f2f2f2;
+  margin-top: 135px;
+}
+
+.cont-company .cont-coInfo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cont-company .title-company {
+  display: block;
+  font-size: 22px;
+  height: 118px;
+  line-height: 118px;
+  border-bottom: 2px solid #c4c4c4;
+  font-weight: 700;
+}
+
+.cont-company .list-sns {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cont-company .list-sns a[class^='link'] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  /* 글씨 숨기기 */
+  font-size: 1px;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.link-twitter {
+  background: url('../assets/twitter.png');
+  background-size: contain;
+}
+.link-facebook {
+  background: url('../assets/facebook.png');
+  background-size: contain;
+}
+.link-insta {
+  background: url('../assets/instagram.png');
+  background-size: contain;
+}
