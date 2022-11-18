@@ -6,6 +6,8 @@ body {
     'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
     'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     sans-serif;
+
+  background-color: darkslateblue;
 }
 
 #app {
@@ -93,7 +95,7 @@ img {
 
 .button-recommend .icon-thumbs-up {
   overflow: hidden;
-  text-indent: -10000px;
+  text-indent: -10000px; /* 글자에 여백을 주어서 화면에 안보이게 처리*/
   background-image: url('../assets/thumbsup.png');
   background-position: center;
   background-repeat: no-repeat;

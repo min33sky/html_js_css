@@ -1,8 +1,8 @@
 //? hover 상태에 따라 보여줄 별 이미지
 const starImageSourceMap = {
-  empty: 'assets/icon_empty_star.png',
-  half: 'assets/icon_half_star.png',
-  full: 'assets/icon_full_star.png',
+  empty: 'assets/icon_empty_star.svg',
+  half: 'assets/icon_half_star.svg',
+  full: 'assets/icon_full_star.svg',
 };
 
 export default class Rating {
@@ -37,13 +37,48 @@ export default class Rating {
       //* 별점을 고정한 상태라면 이벤트를 실행하지 않는다.
       if (this.isLockedStarPoint()) return;
 
-      //* offsetX: target의 마우스 포인터의 X축 위치를 반환한다.
+      //* offsetX: target을 기준으로 마우스 포인터의 X축 위치를 반환한다.
       const { target, offsetX: currentUserPoint } = event;
+
+      // data-point: 별점의 점수를 나타내는 data 속성
       const { point } = target.dataset;
-      const starPointIndex = parseInt(point, 10) - 1; //? index는 0부터 시작하기 때문에 -1을 해준다.
+
+      //? index는 0부터 시작하기 때문에 -1을 해준다. (data-point="1" => index: 0)
+      const starPointIndex = parseInt(point, 10) - 1;
+
       //* getClientRects(): target의 좌표와 크기를 반환한다.
       const [starImageClientRect] = target.getClientRects();
+
+      // 별 한 개의 너비를 구한다.
       const starImageWidth = starImageClientRect.width;
+
+      // 마우스가 별의 절반을 넘어갔는지 여부
+      const isOverHalf = currentUserPoint > starImageWidth / 2;
+      this.renderStarPointImages(starPointIndex, isOverHalf);
+    });
+
+    this.starBackgroundElement.addEventListener('touchmove', (event) => {
+      //* 별점을 고정한 상태라면 이벤트를 실행하지 않는다.
+      if (this.isLockedStarPoint()) return;
+
+      console.log('touchmove', event.touches[0]);
+
+      //* offsetX: target을 기준으로 마우스 포인터의 X축 위치를 반환한다.
+      const { target, offsetX: currentUserPoint } = event;
+
+      // data-point: 별점의 점수를 나타내는 data 속성
+      const { point } = target.dataset;
+
+      //? index는 0부터 시작하기 때문에 -1을 해준다. (data-point="1" => index: 0)
+      const starPointIndex = parseInt(point, 10) - 1;
+
+      //* getClientRects(): target의 좌표와 크기를 반환한다.
+      const [starImageClientRect] = target.getClientRects();
+
+      // 별 한 개의 너비를 구한다.
+      const starImageWidth = starImageClientRect.width;
+
+      // 마우스가 별의 절반을 넘어갔는지 여부
       const isOverHalf = currentUserPoint > starImageWidth / 2;
       this.renderStarPointImages(starPointIndex, isOverHalf);
     });
@@ -70,11 +105,14 @@ export default class Rating {
   renderStarPointImages(drawableLimitIndex = -1, isOverHalf = false) {
     console.log(drawableLimitIndex, isOverHalf);
     this.starImages.forEach((starImage, index) => {
+      //? 현재 마우스가 위치한 별의 인덱스보다 작은 별은 full 이미지를 보여준다.
       let imageSource =
         index < drawableLimitIndex
           ? starImageSourceMap.full
           : starImageSourceMap.empty;
 
+      //? 현재 마우스가 위치한 별의 인덱스와 같은 별이고,
+      //? 마우스가 별의 절반을 넘어갔다면 half 이미지를 보여준다.
       if (index === drawableLimitIndex) {
         imageSource = isOverHalf
           ? starImageSourceMap.full

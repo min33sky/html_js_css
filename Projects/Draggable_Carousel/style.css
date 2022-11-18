@@ -22,6 +22,7 @@ body {
   max-width: 1200px;
 }
 
+/* 화살표 버튼 */
 .wrapper i {
   position: absolute;
   top: 50%;
