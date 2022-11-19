@@ -1,0 +1,83 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: darkslateblue;
+}
+
+.wrapper {
+  position: relative;
+  background-color: #fff;
+  padding: 35px;
+  width: 95vmin;
+  max-width: 1000px;
+  border-radius: 13px;
+  overflow-x: hidden;
+}
+
+.wrapper .icon {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.icon:first-child {
+  left: 0;
+  background: linear-gradient(90deg, #fff 70%, transparent);
+}
+
+.icon:last-child {
+  right: 0;
+  justify-content: flex-end;
+  background: linear-gradient(270deg, #fff 70%, transparent);
+}
+
+.icon i {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.icon i:hover {
+  background-color: #d8d5f2;
+}
+
+.icon:first-child i {
+  margin-left: 15px;
+}
+
+.icon:last-child i {
+  margin-right: 15px;
+}
+
+.wrapper .tabs-box {
+  display: flex;
+  list-style: none;
+  gap: 12px;
+}
+
+.wrapper .tab {
+  cursor: pointer;
+  font-size: 1.18rem;
+  white-space: nowrap;
+  background: #f5f4fd;
+  padding: 13px 20px;
+  border-radius: 30px;
+  border: 1px solid #d8d5f2;
+}
