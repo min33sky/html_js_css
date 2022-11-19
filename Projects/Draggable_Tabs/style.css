@@ -70,6 +70,17 @@ body {
   display: flex;
   list-style: none;
   gap: 12px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.tabs-box.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+.tabs-box.dragging .tab {
+  pointer-events: none;
 }
 
 .wrapper .tab {
@@ -80,4 +91,11 @@ body {
   padding: 13px 20px;
   border-radius: 30px;
   border: 1px solid #d8d5f2;
+  user-select: none;
+}
+
+.tabs-box .tab.active {
+  background: #5372f0;
+  color: #fff;
+  border-color: transparent;
 }
