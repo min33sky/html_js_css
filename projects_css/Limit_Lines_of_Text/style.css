@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: lavender;
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.card {
+  background-color: ghostwhite;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+/*? Ellipsis 구현  */
+/* .cutoff-text {
+  --max-lines: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--max-lines);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+} */
+
+.cutoff-text {
+  --max-lines: 3;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * var(--line-height) * 1em);
+  line-height: var(--line-height);
+  overflow: hidden;
+  position: relative;
+}
+
+.cutoff-text:has(+ .expand-btn:not(:checked)):before {
+  content: '';
+  position: absolute;
+  height: calc(1em * var(--line-height));
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent, white);
+  pointer-events: none;
+}
+
+.cutoff-text:has(+ .expand-btn:checked) {
+  max-height: none;
+}
+
+.expand-btn {
+  appearance: none;
+  border: 1px solid black;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.expand-btn:hover {
+  background-color: #ccc;
+}
+
+.expand-btn::before {
+  content: '더보기';
+}
+
+.expand-btn:checked::before {
+  content: '접기';
+}
