@@ -61,7 +61,7 @@ header,
 .quote-area .quote {
   font-size: 22px;
   text-align: center;
-  word-break: break-all;
+  word-break: break-all; /* Breaks the word if it is too long */
 }
 
 .content .author {
