@@ -5,61 +5,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
-  <title>Image Editor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <script src="./script.js" defer></script>
+  <title>Image Editor 📸</title>
 </head>
 
 <body>
-  <div class="editor">
-    <!-- 이미지 설정 영역 -->
-    <section class="toolbar">
-      <div class="toolbar-item">
-        <input type="file" id="imageFileInput">
-      </div>
-      <div class="toolbar-item">
-        <label class="tool-label" for="brightness">
-          Brightness
-        </label>
-        <input type="range" id="brightness" class="tool-input" min="0" max="200">
-      </div>
-      <div class="toolbar-item">
-        <label class="tool-label" for="saturation">
-          Saturation
-        </label>
-        <input type="range" id="saturation" class="tool-input" min="0" max="200">
-      </div>
-      <div class="toolbar-item">
-        <label class="tool-label" for="blur">
-          Blur
-        </label>
-        <input type="range" id="blur" class="tool-input" min="0" max="25">
-      </div>
-      <div class="toolbar-item">
-        <label class="tool-label" for="inversion">
-          Inversion
-        </label>
-        <input type="range" id="inversion" class="tool-input" min="0" max="100">
+  <div class="container disable">
+    <h2>Easy Image Editor</h2>
+
+    <!-- 메인 -->
+    <div class="wrapper">
+      <!-- 에디터  -->
+      <div class="editor-panel">
+        <div class="filter">
+          <label class="title">Filters</label>
+          <div class="options">
+            <button id="brightness" class="active">Brightness</button>
+            <button id="saturation">Saturation</button>
+            <button id="inversion">Inversion</button>
+            <button id="grayscale">Grayscale</button>
+          </div>
+          <div class="slider">
+            <div class="filter-info">
+              <p class="name">Brighteness</p>
+              <p class="value">100%</p>
+            </div>
+            <input type="range" value="100" min="0" max="200">
+          </div>
+        </div>
+        <div class="rotate">
+          <label class="title">Rotate & Flip</label>
+          <div class="options">
+            <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+            <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+            <button id="vertical"><i class='bx bx-reflect-horizontal'></i></button>
+          </div>
+        </div>
       </div>
 
-      <div class="toolbar-item">
-        <button class="btn" id="resetImageBtn">초기화</button>
+      <!-- 이미지 -->
+      <div class="preview-img">
+        <img src="image-placeholder.svg" alt="preview-img">
       </div>
+    </div>
 
-      <div class="toolbar-item">
-        <a href="" class="btn" download="myImage.png" id="download">이미지 다운로드🚀</a>
+    <!-- 하단 버튼 모음-->
+    <div class="controls">
+      <button class="reset-filter">Reset Filters</button>
+      <div class="row">
+        <input type="file" class="file-input" accept="image/*" hidden>
+        <button class="choose-img">Choose Image</button>
+        <button class="save-img">Save Image</button>
       </div>
-
-
-    </section>
-
-    <!-- 이미지 출력 영역 -->
-    <section class="image-area">
-      <canvas id="canvas" height="500" width="500"></canvas>
-    </section>
+    </div>
   </div>
 </body>
 
