@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lavender;
+  font-family: sans-serif;
+}
+
+.input {
+  height: 30px;
+}
+
+#inputWidth,
+#inputHeight {
+  width: 100px;
+}
+
+#inputDataUrl {
+  width: 100%;
+  max-width: 600px;
+}

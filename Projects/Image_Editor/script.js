@@ -117,9 +117,10 @@ const saveImage = () => {
     previewImg,
     -canvas.width / 2,
     -canvas.height / 2,
-    canvas.width,
-    canvas.height,
+    // canvas.width,
+    // canvas.height,
   );
+  // ctx.drawImage(previewImg, canvas.width, canvas.height);
 
   const link = document.createElement('a');
   link.download = 'hoho';
