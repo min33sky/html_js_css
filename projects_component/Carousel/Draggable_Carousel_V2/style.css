@@ -57,6 +57,8 @@ body {
 .carousel::-webkit-scrollbar {
   display: none;
 }
+
+/*? 필요없는 캐러셀 스크롤 스무스 이동을 없앨때 사용  */
 .carousel.no-transition {
   scroll-behavior: auto;
 }
